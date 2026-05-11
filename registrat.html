@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f0f2f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    width:400px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus, select:focus{
+    border-color:blue;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:blue;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:darkblue;
+}
+
+.message{
+    margin-top:15px;
+    text-align:center;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Registration Form</h2>
+
+    <form id="registrationForm">
+
+        <label>First Name</label>
+        <input type="text" id="fname" placeholder="Enter first name">
+
+        <label>Last Name</label>
+        <input type="text" id="lname" placeholder="Enter last name">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter email">
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter password">
+
+        <label>Gender</label>
+        <select id="gender">
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Course</label>
+        <input type="text" id="course" placeholder="Enter course">
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob">
+
+        <button type="submit">Register</button>
+
+        <div class="message" id="message"></div>
+
+    </form>
+
+</div>
+
+<script>
+
+const form = document.getElementById("registrationForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let fname = document.getElementById("fname").value;
+    let lname = document.getElementById("lname").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let gender = document.getElementById("gender").value;
+    let course = document.getElementById("course").value;
+    let dob = document.getElementById("dob").value;
+
+    if(
+        fname === "" ||
+        lname === "" ||
+        email === "" ||
+        password === "" ||
+        gender === "" ||
+        course === "" ||
+        dob === ""
+    ){
+        message.style.color = "red";
+        message.innerHTML = "Please fill all fields!";
+    }
+    else{
+        message.style.color = "green";
+        message.innerHTML = "Registration Successful!";
+
+        form.reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
