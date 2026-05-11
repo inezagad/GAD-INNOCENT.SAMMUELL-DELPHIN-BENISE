@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entertainment Form</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.container{
+    width: 400px;
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+h2{
+    text-align: center;
+    color: #333;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: darkmagenta;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Entertainment Registration Form</h2>
+
+    <form id="entertainmentForm">
+
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label>Favorite Music</label>
+        <select id="music">
+            <option>Gospel</option>
+            <option>Hip Hop</option>
+            <option>R&B</option>
+            <option>Afro Beat</option>
+        </select>
+
+        <label>Favorite Movie Type</label>
+        <select id="movie">
+            <option>Action</option>
+            <option>Comedy</option>
+            <option>Drama</option>
+            <option>Horror</option>
+        </select>
+
+        <label>Comment</label>
+        <textarea id="comment" placeholder="Write something..."></textarea>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>
+
+<script>
+
+document.getElementById("entertainmentForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+
+    alert("Welcome " + name + "! Your entertainment form was submitted successfully.");
+
+});
+
+</script>
+
+</body>
+</html>

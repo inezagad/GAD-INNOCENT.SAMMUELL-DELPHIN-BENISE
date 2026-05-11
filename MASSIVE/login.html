@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login Form</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f0f2f5;
+}
+
+.login-container{
+    width:350px;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:#333;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus{
+    border-color:blue;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:blue;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:darkblue;
+}
+
+.message{
+    text-align:center;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+
+    <h2>Login Form</h2>
+
+    <form id="loginForm">
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Enter your email">
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="Enter your password">
+
+        <button type="submit">Login</button>
+
+        <div class="message" id="message"></div>
+
+    </form>
+
+</div>
+
+<script>
+
+const loginForm = document.getElementById("loginForm");
+const message = document.getElementById("message");
+
+loginForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    if(email === "" || password === ""){
+        message.style.color = "red";
+        message.innerHTML = "Please fill all fields!";
+    }
+    else if(password.length < 6){
+        message.style.color = "red";
+        message.innerHTML = "Password must be at least 6 characters!";
+    }
+    else{
+        message.style.color = "green";
+        message.innerHTML = "Login Successful!";
+
+        loginForm.reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
