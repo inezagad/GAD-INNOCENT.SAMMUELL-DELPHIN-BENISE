@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Registration Form</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+}
+
+.container{
+    width: 400px;
+    background: white;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+h2{
+    text-align: center;
+    color: darkgreen;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button{
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: green;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Course Registration Form</h2>
+
+    <form id="courseForm">
+
+        <label>Student Full Name</label>
+        <input type="text" id="name" placeholder="Enter full name" required>
+
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter email" required>
+
+        <label>Select Course</label>
+        <select id="course">
+            <option>Web Development</option>
+            <option>Networking</option>
+            <option>Database Management</option>
+            <option>Software Engineering</option>
+            <option>Graphic Design</option>
+        </select>
+
+        <label>Gender</label>
+        <select id="gender">
+            <option>Male</option>
+            <option>Female</option>
+        </select>
+
+        <label>Additional Notes</label>
+        <textarea id="notes" placeholder="Write notes here"></textarea>
+
+        <button type="submit">Register Course</button>
+
+    </form>
+
+</div>
+
+<script>
+
+document.getElementById("courseForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let course = document.getElementById("course").value;
+
+    alert(name + " registered successfully for " + course);
+
+});
+
+</script>
+
+</body>
+</html>
